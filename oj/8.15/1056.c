@@ -16,9 +16,14 @@ int main()
         {
             lasts = i;
         }
-        if ((vis[i] == 1 && i >= 1 && vis[i - 1] == 0) || (vis[i] == 0 && i == n - 1))
+        else if (vis[i] == 1 && i >= 1 && vis[i - 1] == 0)
         {
             printf("0 %d %d\n", lasts * bs + lo_b, (i - lasts) * bs);
+            noo = 0;
+        }
+        else if (vis[i] == 0 && i == n - 1)
+        {
+            printf("0 %d %d\n", lasts * bs + lo_b, (i - lasts + 1) * bs);
             noo = 0;
         }
     }
